@@ -1,4 +1,4 @@
-import {types, getSnapshot} from 'mobx-state-tree';
+import {types} from 'mobx-state-tree';
 
 const Todo = types.model({
   name: '',
@@ -12,5 +12,7 @@ const User = types.model({
 const john = User.create();
 const eat = Todo.create();
 
-console.log('John:', getSnapshot(john));
-console.log('Eat TODO:', getSnapshot(eat));
+module.exports = {
+  john,
+  eat,
+};
