@@ -25,7 +25,7 @@ export const useLDClient = () => {
         };
 
         await client.configure(config, user);
-        console.log('client launch darkly', client);
+        // console.log('client launch darkly', client);
         // store client in state
         setLdClient(client);
       } catch (err) {
@@ -36,6 +36,10 @@ export const useLDClient = () => {
     initLD();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    console.log(ldClient);
+  }, [ldClient]);
 
   return {
     ldClient,
